@@ -1,13 +1,100 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+   background-color: rgb(169, 212, 195);
+   
+}
+   
+h1 {
+   margin: auto;
+   text-align: center;
+   font-size: 36pt;
+   margin-top: 10px;
+   letter-spacing: 5px;
+   font-family: 'Courier New', Courier, monospace;
+   
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+ul.head {
+    background-color:rgb(162, 197, 149);
+    border-radius: 10px;
+    height: 50px;
+    width: 600px;
+    margin-left: 140px;
+    padding-top: 6px;
+    
+    
+}
+
+ul.head li {
+   display: inline;
+   font-size: 24pt;
+   font-family:Georgia, 'Times New Roman', Times, serif;
+   padding-left: 36px;
+   margin-top: 5px;
+}
+
+h2 {
+   font-size: 24pt;
+   letter-spacing: 5px;
+   text-align: center;
+   font-family: 'Courier New', Courier, monospace;
+}
+
+.content-piece {
+   margin: auto;
+   font-size: 20pt;
+   font-family:Georgia, 'Times New Roman', Times, serif;
+   background-color: brown;
+   width: 500px;
+   border-radius: 10px;
+}
+
+h3 {
+   font-size: 14pt;
+   color: rgb(139, 139, 139);
+}
+
+.article-menu {
+   display: inline;
+   font-size: 18pt;
+   background-color:rgb(162, 197, 149);
+   border-radius: 10px;
+   margin-top: 20px;
+   margin-left: 60px;
+   padding-left: 5px;
+   
+}
+
+.article-menu li {
+   padding-bottom: 20px;
+}
+
+.flex {
+    display: flex;
+}
+
+.articles {
+   margin-left: 140px;
+   font-size: 18pt;
+   font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.articles li {
+   padding-bottom: 20px;
+}
+
+.content {
+   position:absolute;
+   margin-left: 400px;
+   margin-top: 120px;
+}
+
+.article-piece {
+   margin: auto;
+   font-size: 20pt;
+   font-family:Georgia, 'Times New Roman', Times, serif;
+   background-color: rgb(164, 192, 3);
+   width: 400px;
+   border-radius: 10px;
+
+
 }
