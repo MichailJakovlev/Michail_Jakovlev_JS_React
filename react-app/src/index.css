@@ -40,3 +40,8 @@ a:visited {
    margin-top: 12px;
 }
 
+.game_place>div>button {
+    height:80px;
+    width: 80px;
+
+}
