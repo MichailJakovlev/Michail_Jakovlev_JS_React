@@ -5,51 +5,55 @@ class Game extends Component {
       
     constructor(props) {
         super(props);
-          this.numberAttempts = 100;
+        this.numberAttempts = 3;
         this.boxClass = [
-           "","","","","","","","","","","","","","","","","","","","","","","","", "",
-        ];
-      }
-
-      handleClick = (e) => {
-         let text = document.getElementById("text");
-         let attempts = document.getElementById("attempts");
-         text.innerHTML = "Открытие " + e.target.innerHTML;
-         let keyId = e.target.dataset.id;
-         let randomNamber = Math.round((Math.random() * 100));
-         if (this.numberAttempts === 0){
-            text.innerHTML = "Поражение";
-            return false;
-         }
-
+           "","","","","", "","","","","","","","","","","","","","","","","","","",""
+        ]; 
+        this.state= {
+           boxClass: this.boxClass,
+        } 
+     this.handleClick = this.handleClick.bind(this);
+  }
+  
+     
+  
+     handleClick = (e) => {
+        let text = document.getElementById("text");
+        let attempts = document.getElementById("attempts");
+        text.innerHTML = "Открывается " + e.target.innerHTML;
+        let keyId = e.currentTarget.dataset.id;
+        let random = Math.round((Math.random() * 100));
+  
+        e.target.setAttribute("disabled", "disabled");
+  
+        if (this.numberAttempts === 0){
+           text.innerHTML = "Жизни закончились";
+           return false;
+        }
+        if(random >= 66){
+           this.numberAttempts--;
+        }
+        if(random < 33){
+           this.numberAttempts--;
+        }
         setTimeout(() => {
-         if(randomNamber >= 66){
-            text.innerHTML = "Вы получите случайный подарок";
-         }
-         if(randomNamber >= 33 && randomNamber<= 66){
-            text.innerHTML = "Попробуйте еще раз";
-         }
-         if(randomNamber <= 33){
-            text.innerHTML = "Ход был не удачен";
-         }
-         attempts.innerHTML = "Попытки: " + this.numberAttempts;
-      }, 500);
-      
-      if(randomNamber >= 66){
-         this.boxClass[keyId] = "W";
-         this.numberAttempts--;
-      }
-      if(randomNamber >= 33 && randomNamber<= 66){
-         this.numberAttempts--;
-         this.boxClass[keyId] = "=";
-      }
-      if(randomNamber <= 33){
-         this.numberAttempts--;
-         this.boxClass[keyId] = "L";
-      }
-      console.log(this.boxClass[keyId]);
-      console.log(keyId);
-   }
+           
+           if(random >= 66){
+              text.innerHTML = "Вы получите случайный подарок";
+              this.boxClass[keyId] = "w";
+           }
+           else if(random >= 33 && random < 66){
+              text.innerHTML = "Попробуйте еще раз";
+              this.boxClass[keyId] = "=";
+           }
+           else {
+              text.innerHTML = "Ход был не удачен";
+              this.boxClass[keyId] = "l";
+           }
+           attempts.innerHTML = "Жизни- " + this.numberAttempts;
+           this.setState({boxClass:this.boxClass});
+        }, 5000);
+     }
 
     render() {
       
